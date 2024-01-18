@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Define variables
+PROJECT_DIR="$(pwd)"
+CLIENT_DIR="$PROJECT_DIR/client"
+SERVER_DIR="$PROJECT_DIR/server"
+
+# Function to install dependencies for React app
+install_client_dependencies() {
+  echo "Installing client dependencies..."
+  cd "$CLIENT_DIR" || exit
+  npm install
+}
+
+# Function to install dependencies for NestJS app
+install_server_dependencies() {
+  echo "Installing server dependencies..."
+  cd "$SERVER_DIR" || exit
+  npm install
+}
+
+# Function to set up the database using Docker Compose
+setup_database() {
+  echo "Setting up database..."
+  cd "$SERVER_DIR" || exit
+  docker-compose up -d mysql_db
+}
+
+# Function to start the React app
+start_client() {
+  echo "Starting React app..."
+  cd "$CLIENT_DIR" || exit
+  npm start
+}
+
+# Function to start the NestJS server
+start_server() {
+  echo "Starting NestJS server..."
+  cd "$SERVER_DIR" || exit
+  npm start
+}
+
+# Main function to run the entire setup
+run_app() {
+  install_client_dependencies
+  install_server_dependencies
+  setup_database
+  start_client & # Run React app in the background
+  start_server   # Start NestJS server
+}
+
+# Execute the main function
+run_app
