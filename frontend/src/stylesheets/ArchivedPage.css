@@ -1,0 +1,6 @@
+.task-list-container-a{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  flex-direction: column;
+}

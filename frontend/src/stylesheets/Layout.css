@@ -1,0 +1,33 @@
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.header-items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-items>li{
+  display: flex;
+  background-color: #00471b;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.item{
+  color: #fff;
+}
+
+.item:hover{
+  color: #9e9494;
+}
