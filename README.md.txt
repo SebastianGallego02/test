@@ -10,6 +10,7 @@ Make sure you have the following tools and dependencies installed on your machin
 - [npm](https://www.npmjs.com/) (9.5.1)
 - Nest (10.3.0)
 - React (^18.2.0)
+- Docker (Docker version 24.0.7, build afdd53b)
 ## Installation
 
 1. Clone the repository:
@@ -32,3 +33,9 @@ Start the application:
 bash
 Copy code
 npm start
+
+
+To keep in mind:
+
+im aware that many things in tbe front could be modularizated, for example using the class "fetchData" to not necesarly write again the same code, instead of that, just call "fetchData"
+because of the limited time, it was written not the way i trully wish
