@@ -45,6 +45,7 @@ run_app() {
   install_client_dependencies
   install_server_dependencies
   setup_database
+  run_server_migrations
   start_client & # Run React app in the background
   start_server   # Start NestJS server
 }
